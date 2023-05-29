@@ -1,12 +1,18 @@
 import React from "react";
+// import Card from "./Card";
 
-class CharacterCard extends React () {
 
+class CharacterCards extends React.Component {
    render() {
-      return(
-         
-      )
+      return (
+         <>
+            <section id="character-cards">
+               {/* <Card /> */}
+               <p>this is card components</p>
+            </section>
+         </>
+      );
    }
 }
 
-export default CharacterCard;
+export default CharacterCards;

@@ -1,7 +1,6 @@
+
+
 function TopCharacters() {
-
-
-
 
   return (
     <section id="character-ratings">
