@@ -1,17 +1,45 @@
+import '../characterRatings.css'
 
+function TopCharacters({characters}) {
 
-function TopCharacters() {
+  // console.log(characters, 'characters prop Top Characters');
+
+  const sortedCharacters = characters.sort(((a, b) => b.votes - a.votes));
+  console.log(sortedCharacters);
+  const top5Char = sortedCharacters.slice(0, 5);
+  console.log(top5Char);
+
 
   return (
     <section id="character-ratings">
       <h4>Top Characters</h4>
       <table>
+        <tbody>
         <tr>
           <th>Name</th>
           <th>Skillset</th>
           <th>Votes</th>
         </tr>
-        <tr className="dark">
+        {top5Char.map((char, index) => {
+          console.log(char, 'char');
+          return(
+            <tr className= {index % 2 === 0 ? 'light': 'dark'} 
+            key = {index}
+            >
+              <td>{char.name}</td>
+              <td>{char.skillset.join(', ')}</td>
+              <td>{char.votes}</td>
+            </tr>
+          )
+        })}
+        </tbody>
+      </table>
+    </section>
+  );
+}
+
+
+        {/* <tr className="dark">
           <td>Alfonse Elrich</td>
           <td>Being Loveable, Alchemy</td>
           <td>110</td>
@@ -35,10 +63,5 @@ function TopCharacters() {
           <td>Nina</td>
           <td>Loving Dogs, being adorable</td>
           <td>93</td>
-        </tr>
-      </table>
-    </section>
-  );
-}
-
+        </tr> */}
 export default TopCharacters;

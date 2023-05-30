@@ -1,4 +1,4 @@
-export const characters = [
+const characters = [
    {
      name: "Alex Louis Armstrong",
      nickName: "Major Armstrong",
@@ -88,3 +88,5 @@ export const characters = [
        "https://static.wikia.nocookie.net/thejusticeworld/images/8/85/800-by-600-366874-20090424144049.jpg/revision/latest?cb=20120415225041",
    },
  ];
+
+ export default characters;
