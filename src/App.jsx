@@ -10,8 +10,6 @@ import './reset.css';
 
 
 function App() {
-  // console.log(characters, 'characters')
-
   return (
     <div className='body'>
       <Header />

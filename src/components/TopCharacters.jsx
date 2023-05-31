@@ -14,7 +14,6 @@ function TopCharacters({ characters }) {
             <th>Votes</th>
           </tr>
           {top5Char.map((char, index) => {
-            console.log(char, "char");
             return (
               <tr className={index % 2 === 0 ? "dark" : "light"} key={index}>
                 <td>{char.name}</td>
