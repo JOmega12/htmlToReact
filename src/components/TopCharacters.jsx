@@ -1,8 +1,10 @@
 import "../characterRatings.css";
 
 function TopCharacters({ characters }) {
-  const sortedCharacters = characters.sort((a, b) => b.votes - a.votes);
-  const top5Char = sortedCharacters.slice(0, 5);
+  const sortedCharacters = [...characters]
+    .sort((a, b) => b.votes - a.votes)
+    .slice(0,5);
+    
   return (
     <section id="character-ratings">
       <h4>Top Characters</h4>
@@ -13,7 +15,7 @@ function TopCharacters({ characters }) {
             <th>Skillset</th>
             <th>Votes</th>
           </tr>
-          {top5Char.map((char, index) => {
+          {sortedCharacters.map((char, index) => {
             return (
               <tr className={index % 2 === 0 ? "dark" : "light"} key={index}>
                 <td>{char.name}</td>

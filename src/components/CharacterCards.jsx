@@ -5,10 +5,8 @@ import "../characterCards.css";
 class CharacterCards extends React.Component {
   render() {
     const { characters } = this.props;
-
-    const mapChar = characters.filter((item) => item.name);
-    console.log(mapChar, "mapChar");
-    const sortedChar = mapChar.sort((a, b) => {
+    const sortedPeople = [...characters];
+    const sortedChar = sortedPeople.sort((a, b) => {
       let nameA = a.name.toLowerCase();
       let nameB = b.name.toLowerCase();
       if (nameA < nameB) {
@@ -19,7 +17,8 @@ class CharacterCards extends React.Component {
         return 0;
       }
     });
-    console.log(sortedChar, "sorted characters");
+
+
     return (
       <>
         <section id="character-cards">
